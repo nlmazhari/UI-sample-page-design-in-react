@@ -1,0 +1,59 @@
+.btn {
+    border: 0;
+    box-shadow: none;
+    border-radius: 100px;
+    background-color: $dark_blue;
+    padding: 3px 50px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:active,
+    &:focus,
+    &:hover,
+    &.btn-default:active,
+    &.btn-default:active:focus,
+    &.btn-default:active:hover {
+        border: none;
+        box-shadow: none;
+        color: $white;
+        background-color: $dark_blue_hov;
+    }
+}
+.blue-btn {
+    @extend .btn;
+    font-size: 15px;
+    margin-left: 3px;
+    padding: 3px 15px;
+    &:active,
+    &:focus,
+    &:hover,
+    &.btn-default:active,
+    &.btn-default:active:focus,
+    &.btn-default:active:hover {
+        color: $white;
+        background-color: $dark_blue_hov;
+    }
+}
+
+.red-btn {
+    @extend .btn;
+    padding: 3px 12px;
+    background-color: $red;
+    &:active,
+    &:focus,
+    &:hover,
+    &.btn-default:active,
+    &.btn-default:active:focus,
+    &.btn-default:active:hover {
+        color: $white;
+        background-color: $red_hov;
+    }
+}
+.view-link {
+    @extend .btn;
+    font-size: 10px;
+    font-weight: 500;
+    width: fit-content;
+    padding: 3px 20px;
+}

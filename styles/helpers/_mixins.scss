@@ -1,0 +1,25 @@
+//using this mixin, 5 lines of code becomes one when u write position stuff :)
+@mixin position-scale($position, $top, $right, $bottom, $left) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+//using this mixin, it becomes easy to write mobile first styles and then override in larger views if necessary
+$breakpoints: ("tiny": 480px, "small": 768px, "medium": 992px, "large": 1280px, "ex-lg":1600px, "extra": 1920px);
+@mixin viewport($size, $base: up) {
+	$range: map-get($breakpoints, $size);
+	@if $range !=null {
+		@if $base==up {
+			@media only screen and (min-width: nth($range, 1)) {
+				@content;
+			}
+		}
+		@else {
+			@media only screen and (min-width: nth($range, 1)) and (max-width: nth($range, 2)) {
+				@content;
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+//all background images can extend this class
+.img-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 41px;
+    color: $green;
+    padding-bottom: 10px;
+    &:hover {
+        color: $green_hov;
+    }
+}
+
+.side-box {
+    background-color: $white;
+    box-shadow: 0 2px 4px 0 $box-shadow;
+    padding: 15px;
+    .btn-default[disabled]:hover {
+        background-color: $dark_blue;
+    }
+    .form-control {
+        color: $gray;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+.flex-row {
+    background-color: $border_color;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 5px;
+    .thumbnail-qa {
+        @extend .img-cover;
+        border: 1px solid #e6e6e6;
+        background-image: url(/assets/img/circular-shape.png);
+        width: 65px;
+        height: 65px;
+        border-radius: 100%;
+    }
+}
+
+@include viewport(small) {
+    .flex-row {
+        flex-direction: row;
+        align-items: center;
+    }
+}

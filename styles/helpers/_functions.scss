@@ -1,0 +1,9 @@
+//setting % for section widths
+@for $i from 1 through 100 {
+    @include viewport(small) {
+        .section-#{$i} {
+            $value: $i * 1%;
+            width: $value;
+        }
+    }
+}
